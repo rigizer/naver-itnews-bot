@@ -1,0 +1,6 @@
+{
+    "naverItNewsCrawlBot": {
+        "token": "(INPUT TOKEN)", 
+        "chatId": "(INPUT CHATID)"
+    }
+}
