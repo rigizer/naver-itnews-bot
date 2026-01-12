@@ -1,6 +1,7 @@
 import json
 import os
 import telegram
+import asyncio
 
 folder_path = os.path.dirname(os.path.realpath(__file__))
 with open(folder_path + "/setting/bot_info.json") as json_file:
@@ -12,8 +13,8 @@ tg_token = naver_bot.get("token")
 tg_chatid = naver_bot.get("chatId")
 tg_bot = telegram.Bot(token = tg_token)
 
-def send(message):
-    tg_bot.sendMessage(chat_id=tg_chatid, text=message)
+async def send(message):
+    await tg_bot.sendMessage(chat_id=tg_chatid, text=message)
 
 if __name__ == "__main__":
-    send("메세지 테스트")
+    asyncio.run(send("메세지 테스트"))
